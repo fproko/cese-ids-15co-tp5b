@@ -25,30 +25,35 @@
 
 /*=====[Definitions of public global variables]==============================*/
 
+//! Estructura con los datos del Alumno "Esteban Volentini"
 static const struct alumno_s ESTEBAN_VOLENTINI = {
     .apellidos = "VOLENTINI",
     .nombres = "Esteban Daniel",
     .documento = "23.517.968",
 };
 
+//! Estructura con los datos del Alumno "Alejando Permingeat" 
 static const struct alumno_s ALEJANDRO_PERMINGEAT = {
     .apellidos = "PERMINGEAT",
     .nombres = "Alejandro",
     .documento = "99.999.999",
 };
 
+//! Estructura con los datos del Alumno "Fernando Prokopiuk" 
 static const struct alumno_s FERNANDO_PROKOPIUK = {
     .apellidos = "PROKOPIUK",
     .nombres = "Fernando Andres",
     .documento = "34.868.467",
 };
 
+//! Vector para identificar a cada Alumno
 const alumno_t ALUMNOS[] = {
     &ESTEBAN_VOLENTINI,
     &ALEJANDRO_PERMINGEAT,
     &FERNANDO_PROKOPIUK,
 };
 
+//! Permite la cantidad de alumnos disponibles
 const int CANTIDAD_ALUMNOS = (sizeof(ALUMNOS) / sizeof(alumno_t));
 
 /*=====[Definitions of private global variables]=============================*/
@@ -68,7 +73,7 @@ bool SerializarAlumno(char * cadena, size_t espacio, const alumno_t alumno) {
     "}";
 
     resultado = snprintf(cadena, espacio, FORMATO, 
-             alumno->documento, alumno->apellidos, alumno->nombres);
+            alumno->documento, alumno->apellidos, alumno->nombres);
 
     return (resultado >= 0);
 }
